@@ -1,13 +1,13 @@
 inventory = dict()
 def add():
     print("--")
-    quel = input("Enter item name: ")
+    quel = input("Enter item name: ").lower
     quantite = int(input("Enter quantity in numbers: "))
     argent = int(input("Enter price in number: "))
     inventory[quel] = [quantite,argent]
 def update():
     print("--")
-    quel = input("Enter item name: ")
+    quel = input("Enter item name: ").lower
     if quel in inventory:
         quantite = int(input("Enter quantity in numbers: "))
         argent = int(input("Enter price in number: "))
@@ -17,14 +17,14 @@ def update():
 
 def delete():
     print("--")
-    quel = input("Enter item name: ")
+    quel = input("Enter item name: ").lower
     if quel in inventory:
         inventory.pop(quel)
     else:
         print(f"No item called {quel}")
 def view():
     print("--")
-    quel = input("Enter item name: ")
+    quel = input("Enter item name: ").lower
     if quel in inventory:
         lst = inventory[quel]
         print(f"Quanity: {lst[0]}")
