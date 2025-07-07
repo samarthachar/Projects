@@ -1,18 +1,3 @@
-# List:
-# logo
-# Do you want to play a game of Blackjack?
-# list[11,2,3,4,5,6,7,8,9,10,10,10,10]
-# Your cards(list)
-# computers cards[list]
-# input(Type get another card)
-# if y:
-#     add card to your cards
-# if n:
-#     calculate
-#     do computers additions
-#
-# show final score
-# ask replay
 import art
 import random
 
