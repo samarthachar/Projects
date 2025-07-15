@@ -1,0 +1,9 @@
+This project is a terminal-based Snake game developed using Python’s built-in Turtle graphics module. It offers a nostalgic twist on the classic arcade game, where players control a snake as it moves across the screen, collecting food and growing longer with each bite. The goal is to keep the snake alive for as long as possible while maneuvering it to avoid the screen’s edges and its own tail.
+
+When the game starts, the snake begins to glide steadily across a black game canvas. The player controls its direction using the arrow keys—up, down, left, and right. A piece of food randomly appears on the screen, and when the snake’s head gets close enough, the food disappears and the snake increases in length. Each successful bite adds to the score, which is dynamically tracked and displayed onscreen during gameplay.
+
+The game continues until the player accidentally guides the snake into the boundary walls or causes it to collide with its own tail. At that point, a “Game Over” message appears, and the program waits for a mouse click to close, allowing for a calm finish to an otherwise intense session.
+
+This game runs entirely with Python’s standard modules and requires no additional installations. It’s organized into multiple files—`snake.py`, `food.py`, and `scoreboard.py`—to keep the logic clean and modular. From handling snake movement and detecting collisions to refreshing food and updating scores, each part is purpose-built for clarity and fun. It’s a perfect beginner project for those diving into event-driven programming and graphical interfaces with Turtle.
+
+Whether you're rekindling memories from your old Nokia or trying Snake for the first time, this game serves up simple joy with every turn.
