@@ -1,0 +1,9 @@
+This project is a fully functional blog website built using Python’s Flask framework and styled with Bootstrap for a clean, responsive design. It allows users to browse blog posts, view individual articles, and submit contact information through a form. The site pulls its content dynamically from an external JSON API, making it easy to update and scale without modifying the core code. The layout is elegant and modern, featuring a homepage with a header image, post previews, and navigation links—all rendered through Jinja templates.
+
+When users visit the homepage, they’re greeted with a visually appealing banner and a list of blog posts, each displaying a title, subtitle, author, and date. Clicking on a post takes them to a dedicated page that shows the full content. The site also includes static “About” and “Contact” pages. The contact form allows visitors to submit their name, email, phone number, and a message. Upon submission, the data is captured and passed to a custom `MailBot` class defined in a separate `sendMail.py` module, which handles email delivery or further processing.
+
+The application uses Flask’s routing system to manage different pages and HTTP methods. It distinguishes between GET and POST requests on the contact page, ensuring that form submissions are handled securely and efficiently. The use of global variables for storing form data is simple but effective for this scale of application. Bootstrap integration ensures that the site looks polished across devices, with responsive containers, styled buttons, and consistent typography.
+
+This blog project is a great example of combining backend logic with frontend design. It teaches key web development concepts such as RESTful routing, template rendering, form handling, and API integration. With its modular structure and clean aesthetic, it’s an ideal starting point for anyone looking to build dynamic websites using Flask.
+
+--NOTE: Run server.py to excecute the code --
