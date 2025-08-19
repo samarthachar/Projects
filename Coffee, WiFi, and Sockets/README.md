@@ -1,0 +1,10 @@
+This project is a web-based Cafe Directory built using Flask, Flask-WTF, and Bootstrap. It allows users to submit and browse information about cafes, including their location, operating hours, and ratings for coffee quality, WiFi strength, and power outlet availability. The application features a clean, responsive interface powered by Bootstrap and uses Flask-WTF forms to handle user input with built-in validation. All submitted data is stored in a CSV file, making it easy to manage and display in tabular format.
+
+When users visit the homepage, they’re greeted with a welcoming message and a call-to-action button that leads to the full list of cafes. The “Add Cafe” page presents a form where users can enter the name of the cafe, a Google Maps URL for its location, opening and closing times, and emoji-based ratings for coffee, WiFi, and power outlets. These ratings are selected from dropdown menus, offering a playful and intuitive way to capture user feedback. All fields are required, and the form includes validation to ensure that the location is a proper URL.
+
+Once the form is submitted, the data is appended to a CSV file, and users are redirected to the homepage. The “All Cafes” page reads from this file and displays the entries in a styled table, complete with clickable links to each cafe’s location. The use of emojis adds a fun visual element to the ratings, making the directory both informative and engaging.
+
+This project is a great introduction to building dynamic web applications with Flask. It demonstrates how to integrate form handling, data validation, file I/O, and responsive design using Bootstrap. With its modular structure and user-friendly interface, it’s ideal for beginners looking to explore full-stack development and create practical, community-driven tools.
+
+
+-- RUN pip3 install -r 'requirements.txt' or Windows equivalent to install packages --
