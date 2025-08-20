@@ -1,0 +1,9 @@
+This project is a simple web-based book collection manager built using Flask and SQLAlchemy, with SQLite as the backend database. It allows users to add, edit, and delete books from their personal library, each entry containing a title, author name, and rating. The application features a clean interface rendered with HTML templates, and all data is stored persistently in a local database file (`new-books-collection.db`), making it easy to maintain and retrieve records.
+
+When users visit the homepage, they’re presented with a list of all books currently in the collection. Each entry displays the book’s title, author, and rating out of 10, along with links to delete the book or edit its rating. If the library is empty, a message is shown to indicate that no books have been added yet. Users can click the “Add New Book” link to navigate to a form where they can input details for a new entry. Upon submission, the form data is validated and stored in the database using SQLAlchemy’s ORM capabilities.
+
+The application also includes an edit route that allows users to update the rating of a specific book. This is handled through a GET request to fetch the book’s current data and a POST request to save the updated rating. Deletion is straightforward, with each book linked to a route that removes it from the database. The use of SQLAlchemy’s declarative base and mapped columns ensures that the database schema is clearly defined and easy to manage.
+
+This project is a great introduction to building CRUD (Create, Read, Update, Delete) applications with Flask and SQLAlchemy. It demonstrates how to structure models, handle form data, manage database sessions, and render dynamic content using Jinja templates. With its simple design and practical functionality, it’s an ideal starting point for anyone looking to learn full-stack web development in Python.
+
+--NOTE: Check requirements.txt for instructions to install libraries --
