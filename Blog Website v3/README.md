@@ -1,0 +1,9 @@
+This project is version 3 of the Flask Blog website, now evolved into a fully authenticated, multi-user platform with commenting features and admin-only post management. Built with Flask, SQLAlchemy, Flask-WTF, Flask-Login, CKEditor, and Bootstrap, it offers a complete blogging experience with user registration, login, logout, and secure access control. Posts and comments are stored in a SQLite database, and the interface is styled for clarity and responsiveness using Bootstrap components.
+
+On the homepage, users can browse all blog posts, each displaying a title, subtitle, author, and publication date. Clicking on a post reveals its full content along with a comment section. Logged-in users can leave comments, which are stored and displayed beneath the post. Each comment is linked to its author, and user avatars are rendered using Gravatar for a personalized touch. The blog content itself is created and edited using CKEditor, allowing rich formatting and media embedding.
+
+User authentication is handled with Flask-Login, and passwords are securely hashed using Werkzeug. New users can register and log in, while existing users can manage their sessions. Admin-only routes are protected by a custom decorator that restricts access to post creation, editing, and deletion. This ensures that only authorized users can modify blog content, maintaining the integrity of the platform.
+
+This version introduces a relational database structure with three models: `User`, `BlogPost`, and `Comment`, each linked through SQLAlchemy relationships. It demonstrates advanced concepts such as role-based access control, form validation, secure password handling, and dynamic content rendering. With its robust feature set and clean architecture, this project is a strong example of how to build a scalable, secure, and interactive blogging platform using Flask.
+
+--NOTE: Install Requirements from requirements_3.13.txt. Also, the first user created has admin rights --
