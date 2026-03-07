@@ -16,7 +16,7 @@ class Voucher(Base):
     voucher_status = Column(Enum(VoucherStatus, name="voucher_status"), nullable=False)
 
     coupon_id = Column(String(255), ForeignKey("coupons.id"), nullable=False)
-    user_id = Column(String, nullable=False) # Developer Note: Change to something similar to: Column(Integer, ForeignKey("users.id"), nullable=False)
+    user_id = Column(String, nullable=True) # Developer Note: Change to something similar to: Column(Integer, ForeignKey("users.id"), nullable=False)
 
     created_at = Column(DateTime(timezone=True), default=(datetime.now(timezone.utc)), nulllable=False)
     modified_at = Column(DateTime(timezone=True))

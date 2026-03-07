@@ -21,7 +21,7 @@ CREATE TABLE Vouchers (
   voucher_code varchar(255) NOT NULL,
   voucher_status voucher_status NOT NULL,
   coupon_id VARCHAR(255) NOT NULL,
-  user_id VARCHAR(255) NOT NULL,
+  user_id VARCHAR(255)  NULL,
   coupon_eligibility coupon_eligibility NOT NULL,
   
   created_at TIMESTAMPZ NOT NULL,
