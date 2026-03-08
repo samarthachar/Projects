@@ -49,3 +49,18 @@ def create(db: Session,
     db.commit()
     db.refresh(coupon)
     return coupon
+
+def get():
+    pass
+
+def list():
+    pass
+
+def update():
+    pass
+
+def soft_delete():
+    pass
+
+def delete():
+    pass
