@@ -26,7 +26,7 @@ class VoucherOut(BaseModel):
     created_by = str 
     modified_by = str | None
 
-class CouponUpdate(BaseModel):
+class VoucherUpdate(BaseModel):
     voucher_code: str | None = Field(default=None, max_length=1000)
     voucher_status: VoucherStatus | None = Field(default="available")
 

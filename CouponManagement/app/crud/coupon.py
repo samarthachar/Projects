@@ -1,66 +1,40 @@
-from datetime import datetime
-
 from sqlalchemy.orm import Session #type: ignore
 
 from app.models.coupon import Coupon
-from app.schemas.coupon import CouponUpdate, CouponCreate, CouponOut
-from app.core.enums import CouponEligibility, CouponScope, CouponStatus, CouponType
+from app.schemas.coupon import CouponUpdate, CouponCreate
 
-def create(db: Session,
-            *, 
-            id: str,
-            coupon_status: CouponStatus,
-            description: str | None, 
-            expiry_date: str, 
-            start_date: str,
-            stackable: bool,
-            coupon_type: CouponType,
-            coupon_scope: CouponScope,
-            caps: str | None,
-            coupon_name: str,
-            coupon_eligibility : CouponEligibility,
-
-            created_at: datetime,
-            created_by: str,
-            modified_at: datetime | None,
-            modified_by: str | None
-
-    ) -> Coupon:
-    coupon = Coupon(
-        id=id,
-        coupon_status=coupon_status,
-        description=description,
-        expiry_date=expiry_date,
-        start_date=start_date,
-        stackable=stackable,
-        coupon_type=coupon_type,
-        coupon_scope=coupon_scope,
-        caps=caps,
-        coupon_name=coupon_name,
-        coupon_eligibility=coupon_eligibility,
-
-        created_at=created_at,
-        created_by=created_by,
-        modified_at=modified_at,
-        modified_by=modified_by
-    )
-
-    db.add(coupon)
+def create(db: Session, *, obj_in: CouponCreate) -> Coupon:
+    db_obj = Coupon(**obj_in.model_dump())
+    
+    db.add(db_obj)
     db.commit()
-    db.refresh(coupon)
-    return coupon
+    db.refresh(db_obj)
+    return db_obj
 
-def get():
-    pass
 
-def list():
-    pass
+def get(db: Session, coupon_id: str) -> Coupon | None:
+    return db.query(Coupon).filter(Coupon.id == coupon_id).first()
 
-def update():
-    pass
+def update(db: Session, db_obj: Coupon, obj_in: CouponUpdate) -> Coupon:
+    update_data = obj_in.model_dump(exclude_unset=True)
 
-def soft_delete():
-    pass
+    for field, value in update_data.items():
+        setattr(db_obj, field, value)
 
-def delete():
-    pass
+    db.add(db_obj)
+    db.commit()
+    db.refresh(db_obj)
+    return db_obj
+
+def revoke(db: Session, db_obj: Coupon):
+    db_obj.coupon_status = "revoked"
+    return
+
+
+def delete(db: Session, coupon: Coupon):
+    db.delete(coupon)
+    db.commit()
+    return
+
+def list(db: Session, *, skip: int = 0, limit: int = 20) -> list[Coupon]: # type: ignore
+    return db.query(Coupon).offset(skip).limit(limit).all()
