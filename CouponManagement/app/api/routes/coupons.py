@@ -19,6 +19,10 @@ def get_coupon(coupon_id: UUID, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Coupon not found")
     return coupon
 
+@router.patch("/{coupon_id}", response_model=CouponOut)
+def update_coupon(coupon_id: UUID, db: Session = Depends(get_db)):
+    pass
+
 @router.delete("/{coupon_id}", status_code=204)
 def delete_coupon(
     coupon_id: UUID,
@@ -30,6 +34,7 @@ def delete_coupon(
 
     crud_coupon.delete(db, coupon)
     return
+
 
 @router.get("")
 def list_coupons(

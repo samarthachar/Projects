@@ -8,7 +8,6 @@ from pydantic import BaseModel, EmailStr, Field # type: ignore
 from app.core.enums import CouponEligibility, CouponScope, CouponStatus, CouponType
 
 class CouponCreate(BaseModel):
-    id: UUID = Field(default_factory=uuid.uuid4)
     start_date: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc)
     )
@@ -28,8 +27,8 @@ class CouponOut(BaseModel):
     coupon_status: CouponStatus 
     description: str | None
 
-    expiry_date: str  
-    start_date: str 
+    expiry_date: datetime  
+    start_date: datetime 
     stackable: bool 
     coupon_type: CouponType 
     coupon_scope: CouponScope
@@ -42,13 +41,14 @@ class CouponOut(BaseModel):
     modified_by : UUID | None
 
 class CouponUpdate(BaseModel):
-
-    coupon_status: CouponStatus | None = Field()
+    coupon_status: CouponStatus | None = Field(default=None)
+    coupon_type: CouponType | None = Field(default=None)
+    coupon_scope: CouponScope | None = Field(default=None)
+    
     description: str | None = Field(default=None, max_length=1000)
-    expiry_date: str | None = Field(default=None)
-    start_date: str | None = Field(default=None)
+    expiry_date: datetime | None = Field(default=None)
+    start_date: datetime | None = Field(default=None)
     stackable: bool | None = Field(default=False)
-    coupon_type: CouponType | None = Field()
-    coupon_scope: CouponScope | None = Field()
-    caps: str | None = Field(min_length=1, max_length=255)
-    coupon_name: str | None = Field(min_length=1, max_length=255)
+    
+    caps: str | None = Field(default=None)
+    coupon_name: str | None = Field(default=None)

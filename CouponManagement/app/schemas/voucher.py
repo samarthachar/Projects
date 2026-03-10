@@ -8,11 +8,11 @@ from app.core.enums import VoucherStatus
 
 class VoucherCreate(BaseModel):
 
-    voucher_code: UUID | None = Field(default=None, max_length=1000)
+    voucher_code: str | None = Field(default=None, max_length=1000)
     voucher_status: VoucherStatus = Field(default="available")
 
-    coupon_id: UUID = Field(max_length=255)
-    user_id: UUID | None = Field(max_length=255, default=None)
+    coupon_id: UUID
+    user_id: UUID | None
 
 class VoucherOut(BaseModel):
     id: UUID
@@ -31,5 +31,5 @@ class VoucherUpdate(BaseModel):
     voucher_code: str | None = Field(default=None, max_length=1000)
     voucher_status: VoucherStatus | None = Field(default="available")
 
-    coupon_id: UUID | None = Field(max_length=255)
-    user_id: UUID | None = Field(max_length=255, default=None)
+    coupon_id: UUID | None
+    user_id: UUID | None
