@@ -1,8 +1,10 @@
 from fastapi import FastAPI # type: ignore
 
-from app.db.base import Base
-from app.db.session import engine
+from app.api.routes import coupons
+from app.api.routes import vouchers
 
-app = FastAPI(title="Test API", version="0.1.0")
+app = FastAPI(title="Coupons API", version="0.1.0")
 
 
+app.include_router(coupons.router)
+app.include_router(vouchers.router)

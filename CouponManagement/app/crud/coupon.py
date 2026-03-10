@@ -1,3 +1,6 @@
+from uuid import UUID 
+
+
 from sqlalchemy.orm import Session #type: ignore
 
 from app.models.coupon import Coupon
@@ -12,7 +15,7 @@ def create(db: Session, *, obj_in: CouponCreate) -> Coupon:
     return db_obj
 
 
-def get(db: Session, coupon_id: str) -> Coupon | None:
+def get(db: Session, coupon_id: UUID) -> Coupon | None:
     return db.query(Coupon).filter(Coupon.id == coupon_id).first()
 
 def update(db: Session, db_obj: Coupon, obj_in: CouponUpdate) -> Coupon:

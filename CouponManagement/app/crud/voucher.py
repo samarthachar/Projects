@@ -1,3 +1,5 @@
+from uuid import UUID
+
 from sqlalchemy.orm import Session # type: ignore
 
 from app.models.voucher import Voucher
@@ -12,7 +14,7 @@ def create(db: Session, *, obj_in: VoucherCreate) -> Voucher:
     return db_obj
 
 
-def get(db: Session, voucher_id: str) -> Voucher | None:
+def get(db: Session, voucher_id: UUID) -> Voucher | None:
     return db.query(Voucher).filter(Voucher.id == voucher_id).first()
 
 def list(db: Session, *, skip: int = 0, limit: int = 20) -> list[Voucher]: # type: ignore

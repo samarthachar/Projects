@@ -2,8 +2,8 @@ CREATE TABLE Coupons (
   id varchar(255) PRIMARY KEY,
   coupon_status coupon_status NOT NULL,
   description varchar(255) NULL,
-  expiry_date TIMESTAMPZ NOT NULL,
-  start_date TIMESTAMPZ NOT NULL,
+  expiry_date TIMESTAMPTZ NOT NULL,
+  start_date TIMESTAMPTZ NOT NULL,
   stackable BOOL NOT NULL, 
   coupon_type coupon_type NOT NULL,
   coupon_scope coupon_scope NOT NULL, 
@@ -11,8 +11,8 @@ CREATE TABLE Coupons (
   coupon_name VARCHAR(255) NOT NULL,
   coupon_eligibility coupon_eligibility NOT NULL,
 
-  created_at TIMESTAMPZ NOT NULL,
-  modified_at TIMESTAMPZ NULL,
+  created_at TIMESTAMPTZ NOT NULL,
+  modified_at TIMESTAMPTZ NULL,
   created_by VARCHAR(255) NOT NULL,
   modified_by VARCHAR(255) NULL
 );
@@ -25,8 +25,8 @@ CREATE TABLE Vouchers (
   user_id VARCHAR(255)  NULL,
 
   
-  created_at TIMESTAMPZ NOT NULL,
-  modified_at TIMESTAMPZ NULL,
+  created_at TIMESTAMPTZ NOT NULL,
+  modified_at TIMESTAMPTZ NULL,
   created_by VARCHAR(255) NOT NULL,
   modified_by VARCHAR(255) NULL,
   

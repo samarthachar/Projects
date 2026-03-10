@@ -3,3 +3,4 @@ uvicorn
 sqlalchemy
 pydantic-settings
 dotenv
+psycopg2-binary

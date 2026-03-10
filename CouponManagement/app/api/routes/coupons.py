@@ -1,3 +1,5 @@
+from uuid import UUID
+
 from fastapi import APIRouter, Depends, HTTPException, Query # type: ignore
 from sqlalchemy.orm import Session # type: ignore
 from app.api.deps import get_db
@@ -11,7 +13,7 @@ def create_coupon(obj_in: CouponCreate, db: Session = Depends(get_db)):
     return crud_coupon.create(db, obj_in=obj_in)
 
 @router.get("/{coupon_id}", response_model=CouponOut)
-def get_coupon(coupon_id: str, db: Session = Depends(get_db)):
+def get_coupon(coupon_id: UUID, db: Session = Depends(get_db)):
     coupon = crud_coupon.get(db, coupon_id=coupon_id)
     if not coupon:
         raise HTTPException(status_code=404, detail="Coupon not found")
@@ -19,7 +21,7 @@ def get_coupon(coupon_id: str, db: Session = Depends(get_db)):
 
 @router.delete("/{coupon_id}", status_code=204)
 def delete_coupon(
-    coupon_id: str,
+    coupon_id: UUID,
     db: Session = Depends(get_db),
 ):
     coupon = crud_coupon.get(db, coupon_id=coupon_id)

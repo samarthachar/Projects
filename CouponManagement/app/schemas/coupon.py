@@ -1,14 +1,20 @@
-from datetime import datetime
+from uuid import UUID
+import uuid
+
+from datetime import datetime, timedelta, timezone
 
 from pydantic import BaseModel, EmailStr, Field # type: ignore 
 
 from app.core.enums import CouponEligibility, CouponScope, CouponStatus, CouponType
 
 class CouponCreate(BaseModel):
-
-    description: str | None = Field(default=None, max_length=1000)
-    expiry_date: str | None = Field(default=None)
-    start_date: str | None = Field(default=None)
+    id: UUID = Field(default_factory=uuid.uuid4)
+    start_date: datetime = Field(
+        default_factory=lambda: datetime.now(timezone.utc)
+    )
+    expiry_date: datetime = Field(
+        default_factory=lambda: datetime.now(timezone.utc) + timedelta(days=10)
+    )
     stackable: bool = Field(default=False)
     coupon_type: CouponType = Field()
     coupon_scope: CouponScope = Field()
@@ -18,7 +24,7 @@ class CouponCreate(BaseModel):
 
 
 class CouponOut(BaseModel):
-    id: str 
+    id: UUID 
     coupon_status: CouponStatus 
     description: str | None
 
@@ -30,10 +36,10 @@ class CouponOut(BaseModel):
     caps: str | None
     coupon_name: str 
 
-    created_at = datetime
-    modified_at = datetime | None
-    created_by = str 
-    modified_by = str | None
+    created_at: datetime
+    modified_at: datetime | None
+    created_by: UUID 
+    modified_by : UUID | None
 
 class CouponUpdate(BaseModel):
 
