@@ -4,6 +4,7 @@ CREATE TABLE Coupons (
   description varchar(255) NULL,
   expiry_date TIMESTAMPTZ NOT NULL,
   start_date TIMESTAMPTZ NOT NULL,
+  value FLOAT NOT NULL,
   stackable BOOL NOT NULL, 
   coupon_type coupon_type NOT NULL,
   coupon_scope coupon_scope NOT NULL, 

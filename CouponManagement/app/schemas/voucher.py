@@ -29,7 +29,7 @@ class VoucherOut(BaseModel):
 
 class VoucherUpdate(BaseModel):
     voucher_code: str | None = Field(default=None, max_length=1000)
-    voucher_status: VoucherStatus | None = Field(default="available")
+    voucher_status: VoucherStatus | None = Field(default=None) 
 
-    coupon_id: UUID | None
-    user_id: UUID | None
+    coupon_id: UUID | None = None
+    user_id: UUID | None = None

@@ -3,7 +3,7 @@ import uuid
 from datetime import datetime, timezone, timedelta
 from app.core.enums import CouponScope, CouponEligibility, CouponStatus, CouponType
 from sqlalchemy.dialects.postgresql import UUID # type: ignore
-from sqlalchemy import Column, String, Boolean, DateTime, Enum # type: ignore
+from sqlalchemy import Column, String, Boolean, DateTime, Enum, Float # type: ignore
 
 from app.db.base import Base
 
@@ -16,6 +16,7 @@ class Coupon(Base):
     description = Column(String(255), nullable=True)
     start_date = Column(DateTime(timezone=True), nullable=False)
     expiry_date = Column(DateTime(timezone=True), nullable=False)
+    value = Column(Float(), nullable=False)
     stackable = Column(Boolean, default=False, nullable=False)
     coupon_type = Column(Enum(CouponType, name="coupon_type"), nullable=False)
     coupon_status = Column(Enum(CouponStatus), default="draft",nullable=False)

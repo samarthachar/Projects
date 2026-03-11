@@ -14,6 +14,7 @@ class CouponCreate(BaseModel):
     expiry_date: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc) + timedelta(days=10)
     )
+    value: float = Field()
     stackable: bool = Field(default=False)
     coupon_type: CouponType = Field()
     coupon_scope: CouponScope = Field()
