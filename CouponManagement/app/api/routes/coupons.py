@@ -25,7 +25,7 @@ def update_coupon(coupon_id: UUID, coupon_update: CouponUpdate,db: Session = Dep
     if not coupon:
         raise HTTPException(status_code=404, detail="Coupon not found")
 
-    update_data = coupon_update.model_dump(exclude_unset=True)
+    update_data = coupon_update.model_dump(exclude_unset=True, exclude_none=True)
 
     for key, value in update_data.items():
         setattr(coupon, key, value)

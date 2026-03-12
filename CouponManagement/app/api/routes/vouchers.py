@@ -1,5 +1,6 @@
 from uuid import UUID
 
+from sqlalchemy.exc import IntegrityError
 from fastapi import APIRouter, Depends, HTTPException, Query # type: ignore
 from sqlalchemy.orm import Session # type: ignore
 from app.api.deps import get_db
@@ -10,7 +11,14 @@ router = APIRouter(prefix="/vouchers", tags=["vouchers"])
 
 @router.post("", response_model=VoucherOut, status_code=201)
 def create_voucher(obj_in: VoucherCreate, db: Session = Depends(get_db)):
-    return crud_voucher.create(db, obj_in=obj_in)
+    try:
+        return crud_voucher.create(db, obj_in=obj_in)
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(
+            status_code=400, 
+            detail="The specified Coupon ID does not exist."
+        )
 
 @router.get("/{voucher_id}", response_model=VoucherOut)
 def get_voucher(voucher_id: UUID, db: Session = Depends(get_db)):
@@ -25,12 +33,14 @@ def update_coupon(voucher_id: UUID, voucher_update: VoucherUpdate,db: Session = 
     if not voucher:
         raise HTTPException(status_code=404, detail="Voucher not found")
 
-    update_data = voucher_update.model_dump(exclude_unset=True)
+
+    update_data = voucher_update.model_dump(exclude_unset=True, exclude_none=True)
 
     for key, value in update_data.items():
         setattr(voucher, key, value)
 
-    db.add(voucher)
+
+    db.merge(voucher)
     db.commit()
     db.refresh(voucher)
     return voucher
