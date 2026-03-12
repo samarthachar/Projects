@@ -1,6 +1,6 @@
 from uuid import UUID
 
-from sqlalchemy.exc import IntegrityError
+from sqlalchemy.exc import IntegrityError # type: ignore
 from fastapi import APIRouter, Depends, HTTPException, Query # type: ignore
 from sqlalchemy.orm import Session # type: ignore
 from app.api.deps import get_db
