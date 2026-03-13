@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "f7751ceb-f930-404d-9966-6c19456368d4",
+    "_postman_id": "bed52d3a-04e7-4bea-8a99-0ca9cf0d930b",
     "name": "Coupons API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "53122545",
-    "_collection_link": "https://go.postman.co/collection/53122545-f7751ceb-f930-404d-9966-6c19456368d4?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/53122545-bed52d3a-04e7-4bea-8a99-0ca9cf0d930b?source=collection_link"
   },
   "item": [
     {
@@ -24,13 +24,19 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/coupons/daea8d93-b1d1-49b5-a25d-9b89634a197d",
+                  "raw": "{{baseUrl}}/coupons/:coupon_id",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
                     "coupons",
-                    "daea8d93-b1d1-49b5-a25d-9b89634a197d"
+                    ":coupon_id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "coupon_id",
+                      "value": "8fec0c4e-a546-0ca0-07ff-bb1cb01341dd"
+                    }
                   ]
                 }
               },
@@ -57,7 +63,7 @@
                       "variable": [
                         {
                           "key": "coupon_id",
-                          "value": "426b806b-389d-011f-824d-75beb85edc0f"
+                          "value": "8fec0c4e-a546-0ca0-07ff-bb1cb01341dd"
                         }
                       ]
                     }
@@ -72,7 +78,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n  \"id\": \"c83c2b18-2e36-d7f9-2e2c-a77c4969df3b\",\n  \"coupon_status\": \"draft\",\n  \"description\": null,\n  \"expiry_date\": \"1988-07-09T03:12:01.424Z\",\n  \"start_date\": \"1981-06-26T12:17:37.533Z\",\n  \"stackable\": true,\n  \"coupon_type\": \"fixed_amount\",\n  \"coupon_scope\": \"order_level\",\n  \"caps\": null,\n  \"coupon_name\": \"string\",\n  \"created_at\": \"1968-08-31T12:53:05.868Z\",\n  \"modified_at\": \"1952-09-21T07:15:06.378Z\",\n  \"created_by\": \"7260ac1b-95d7-b711-df0d-6565e64a33d1\",\n  \"modified_by\": null\n}"
+                  "body": "{\n  \"id\": \"6153b515-3480-9327-913e-562b4048d01a\",\n  \"coupon_status\": \"paused\",\n  \"description\": null,\n  \"expiry_date\": \"2002-04-27T12:56:15.348Z\",\n  \"start_date\": \"1951-08-03T07:50:06.091Z\",\n  \"stackable\": true,\n  \"coupon_type\": \"fixed_amount\",\n  \"coupon_scope\": \"order_level\",\n  \"caps\": null,\n  \"coupon_name\": \"string\",\n  \"created_at\": \"1969-10-13T18:00:39.611Z\",\n  \"modified_at\": null,\n  \"created_by\": \"051362ed-cf6d-833b-01db-e525373893f7\",\n  \"modified_by\": \"5de86945-3d23-e91d-ccd2-f0dc6c1ca24d\"\n}"
                 },
                 {
                   "name": "Validation Error",
@@ -96,7 +102,7 @@
                       "variable": [
                         {
                           "key": "coupon_id",
-                          "value": "426b806b-389d-011f-824d-75beb85edc0f"
+                          "value": "8fec0c4e-a546-0ca0-07ff-bb1cb01341dd"
                         }
                       ]
                     }
@@ -111,7 +117,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        420,\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        3402\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
+                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
                 }
               ]
             },
@@ -131,7 +137,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n\n  \"coupon_type\": \"price_overide\",\n  \"coupon_scope\": \"order_level\",\n  \"stackable\": true,\n  \"caps\": \"string\",\n  \"coupon_name\": \"string\"\n}\n\n",
+                  "raw": "{\n  \"coupon_status\": null,\n  \"coupon_type\": \"price_overide\",\n  \"coupon_scope\": \"order_level\",\n  \"description\": null,\n  \"expiry_date\": \"2008-12-21T00:24:08.838Z\",\n  \"start_date\": null,\n  \"stackable\": true,\n  \"caps\": null,\n  \"coupon_name\": null\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -140,13 +146,19 @@
                   }
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/coupons/daea8d93-b1d1-49b5-a25d-9b89634a197d",
+                  "raw": "{{baseUrl}}/coupons/:coupon_id",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
                     "coupons",
-                    "daea8d93-b1d1-49b5-a25d-9b89634a197d"
+                    ":coupon_id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "coupon_id",
+                      "value": "8fec0c4e-a546-0ca0-07ff-bb1cb01341dd"
+                    }
                   ]
                 }
               },
@@ -167,7 +179,7 @@
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"coupon_status\": null,\n  \"coupon_type\": \"price_overide\",\n  \"coupon_scope\": \"order_level\",\n  \"description\": null,\n  \"expiry_date\": null,\n  \"start_date\": null,\n  \"stackable\": true,\n  \"caps\": \"string\",\n  \"coupon_name\": \"string\"\n}",
+                      "raw": "{\n  \"coupon_status\": null,\n  \"coupon_type\": \"price_overide\",\n  \"coupon_scope\": \"order_level\",\n  \"description\": null,\n  \"expiry_date\": \"2008-12-21T00:24:08.838Z\",\n  \"start_date\": null,\n  \"stackable\": true,\n  \"caps\": null,\n  \"coupon_name\": null\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -187,7 +199,7 @@
                       "variable": [
                         {
                           "key": "coupon_id",
-                          "value": "426b806b-389d-011f-824d-75beb85edc0f"
+                          "value": "8fec0c4e-a546-0ca0-07ff-bb1cb01341dd"
                         }
                       ]
                     }
@@ -202,7 +214,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n  \"id\": \"c83c2b18-2e36-d7f9-2e2c-a77c4969df3b\",\n  \"coupon_status\": \"draft\",\n  \"description\": null,\n  \"expiry_date\": \"1988-07-09T03:12:01.424Z\",\n  \"start_date\": \"1981-06-26T12:17:37.533Z\",\n  \"stackable\": true,\n  \"coupon_type\": \"fixed_amount\",\n  \"coupon_scope\": \"order_level\",\n  \"caps\": null,\n  \"coupon_name\": \"string\",\n  \"created_at\": \"1968-08-31T12:53:05.868Z\",\n  \"modified_at\": \"1952-09-21T07:15:06.378Z\",\n  \"created_by\": \"7260ac1b-95d7-b711-df0d-6565e64a33d1\",\n  \"modified_by\": null\n}"
+                  "body": "{\n  \"id\": \"6153b515-3480-9327-913e-562b4048d01a\",\n  \"coupon_status\": \"paused\",\n  \"description\": null,\n  \"expiry_date\": \"2002-04-27T12:56:15.348Z\",\n  \"start_date\": \"1951-08-03T07:50:06.091Z\",\n  \"stackable\": true,\n  \"coupon_type\": \"fixed_amount\",\n  \"coupon_scope\": \"order_level\",\n  \"caps\": null,\n  \"coupon_name\": \"string\",\n  \"created_at\": \"1969-10-13T18:00:39.611Z\",\n  \"modified_at\": null,\n  \"created_by\": \"051362ed-cf6d-833b-01db-e525373893f7\",\n  \"modified_by\": \"5de86945-3d23-e91d-ccd2-f0dc6c1ca24d\"\n}"
                 },
                 {
                   "name": "Validation Error",
@@ -220,7 +232,7 @@
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"coupon_status\": null,\n  \"coupon_type\": \"price_overide\",\n  \"coupon_scope\": \"order_level\",\n  \"description\": null,\n  \"expiry_date\": null,\n  \"start_date\": null,\n  \"stackable\": true,\n  \"caps\": \"string\",\n  \"coupon_name\": \"string\"\n}",
+                      "raw": "{\n  \"coupon_status\": null,\n  \"coupon_type\": \"price_overide\",\n  \"coupon_scope\": \"order_level\",\n  \"description\": null,\n  \"expiry_date\": \"2008-12-21T00:24:08.838Z\",\n  \"start_date\": null,\n  \"stackable\": true,\n  \"caps\": null,\n  \"coupon_name\": null\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -240,7 +252,7 @@
                       "variable": [
                         {
                           "key": "coupon_id",
-                          "value": "426b806b-389d-011f-824d-75beb85edc0f"
+                          "value": "8fec0c4e-a546-0ca0-07ff-bb1cb01341dd"
                         }
                       ]
                     }
@@ -255,7 +267,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        420,\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        3402\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
+                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
                 }
               ]
             },
@@ -281,7 +293,7 @@
                   "variable": [
                     {
                       "key": "coupon_id",
-                      "value": "426b806b-389d-011f-824d-75beb85edc0f"
+                      "value": "8fec0c4e-a546-0ca0-07ff-bb1cb01341dd"
                     }
                   ]
                 }
@@ -304,7 +316,7 @@
                       "variable": [
                         {
                           "key": "coupon_id",
-                          "value": "426b806b-389d-011f-824d-75beb85edc0f"
+                          "value": "8fec0c4e-a546-0ca0-07ff-bb1cb01341dd"
                         }
                       ]
                     }
@@ -338,7 +350,7 @@
                       "variable": [
                         {
                           "key": "coupon_id",
-                          "value": "426b806b-389d-011f-824d-75beb85edc0f"
+                          "value": "8fec0c4e-a546-0ca0-07ff-bb1cb01341dd"
                         }
                       ]
                     }
@@ -353,7 +365,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        420,\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        3402\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
+                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
                 }
               ]
             }
@@ -375,7 +387,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"value\": 12.3,\n  \"coupon_type\": \"percentage\",\n  \"coupon_scope\": \"order_level\",\n  \"caps\": \"string\",\n  \"coupon_name\": \"string\",\n  \"coupon_eligibility\": \"customer\",\n  \"start_date\": \"2003-11-17T08:30:35.106Z\",\n  \"expiry_date\": \"2019-10-24T04:32:19.604Z\",\n  \"stackable\": false\n}",
+              "raw": "{\n  \"value\": 4624.65493914656,\n  \"coupon_type\": \"price_overide\",\n  \"coupon_scope\": \"item_level\",\n  \"caps\": \"string\",\n  \"coupon_name\": \"string\",\n  \"coupon_eligibility\": \"geography\",\n  \"start_date\": \"1998-10-05T17:24:52.635Z\",\n  \"expiry_date\": \"1994-06-11T00:36:00.185Z\",\n  \"stackable\": false\n}",
               "options": {
                 "raw": {
                   "headerFamily": "json",
@@ -410,7 +422,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"value\": 6133.084741847619,\n  \"coupon_type\": \"percentage\",\n  \"coupon_scope\": \"order_level\",\n  \"caps\": \"string\",\n  \"coupon_name\": \"string\",\n  \"coupon_eligibility\": \"customer\",\n  \"start_date\": \"2003-11-17T08:30:35.106Z\",\n  \"expiry_date\": \"2019-10-24T04:32:19.604Z\",\n  \"stackable\": false\n}",
+                  "raw": "{\n  \"value\": 4624.65493914656,\n  \"coupon_type\": \"price_overide\",\n  \"coupon_scope\": \"item_level\",\n  \"caps\": \"string\",\n  \"coupon_name\": \"string\",\n  \"coupon_eligibility\": \"geography\",\n  \"start_date\": \"1998-10-05T17:24:52.635Z\",\n  \"expiry_date\": \"1994-06-11T00:36:00.185Z\",\n  \"stackable\": false\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -438,7 +450,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n  \"id\": \"c83c2b18-2e36-d7f9-2e2c-a77c4969df3b\",\n  \"coupon_status\": \"draft\",\n  \"description\": null,\n  \"expiry_date\": \"1988-07-09T03:12:01.424Z\",\n  \"start_date\": \"1981-06-26T12:17:37.533Z\",\n  \"stackable\": true,\n  \"coupon_type\": \"fixed_amount\",\n  \"coupon_scope\": \"order_level\",\n  \"caps\": null,\n  \"coupon_name\": \"string\",\n  \"created_at\": \"1968-08-31T12:53:05.868Z\",\n  \"modified_at\": \"1952-09-21T07:15:06.378Z\",\n  \"created_by\": \"7260ac1b-95d7-b711-df0d-6565e64a33d1\",\n  \"modified_by\": null\n}"
+              "body": "{\n  \"id\": \"6153b515-3480-9327-913e-562b4048d01a\",\n  \"coupon_status\": \"paused\",\n  \"description\": null,\n  \"expiry_date\": \"2002-04-27T12:56:15.348Z\",\n  \"start_date\": \"1951-08-03T07:50:06.091Z\",\n  \"stackable\": true,\n  \"coupon_type\": \"fixed_amount\",\n  \"coupon_scope\": \"order_level\",\n  \"caps\": null,\n  \"coupon_name\": \"string\",\n  \"created_at\": \"1969-10-13T18:00:39.611Z\",\n  \"modified_at\": null,\n  \"created_by\": \"051362ed-cf6d-833b-01db-e525373893f7\",\n  \"modified_by\": \"5de86945-3d23-e91d-ccd2-f0dc6c1ca24d\"\n}"
             },
             {
               "name": "Validation Error",
@@ -456,7 +468,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"value\": 6133.084741847619,\n  \"coupon_type\": \"percentage\",\n  \"coupon_scope\": \"order_level\",\n  \"caps\": \"string\",\n  \"coupon_name\": \"string\",\n  \"coupon_eligibility\": \"customer\",\n  \"start_date\": \"2003-11-17T08:30:35.106Z\",\n  \"expiry_date\": \"2019-10-24T04:32:19.604Z\",\n  \"stackable\": false\n}",
+                  "raw": "{\n  \"value\": 4624.65493914656,\n  \"coupon_type\": \"price_overide\",\n  \"coupon_scope\": \"item_level\",\n  \"caps\": \"string\",\n  \"coupon_name\": \"string\",\n  \"coupon_eligibility\": \"geography\",\n  \"start_date\": \"1998-10-05T17:24:52.635Z\",\n  \"expiry_date\": \"1994-06-11T00:36:00.185Z\",\n  \"stackable\": false\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -484,7 +496,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        420,\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        3402\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
             }
           ]
         },
@@ -601,7 +613,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        420,\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        3402\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
             }
           ]
         }
@@ -635,7 +647,7 @@
                   "variable": [
                     {
                       "key": "voucher_id",
-                      "value": "b2f8a514-ce5e-a3fd-d3b2-22ad915cd613"
+                      "value": "148f8b8d-c6e8-9b02-623e-f7d4747a4fd0"
                     }
                   ]
                 }
@@ -663,7 +675,7 @@
                       "variable": [
                         {
                           "key": "voucher_id",
-                          "value": "b2f8a514-ce5e-a3fd-d3b2-22ad915cd613"
+                          "value": "148f8b8d-c6e8-9b02-623e-f7d4747a4fd0"
                         }
                       ]
                     }
@@ -678,7 +690,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n  \"id\": \"2b27e303-9114-df5d-1cf4-eb6718b29449\",\n  \"voucher_code\": \"string\",\n  \"voucher_status\": \"redeemed\",\n  \"coupon_id\": \"2b7e2039-7a99-2153-aa58-ab0a653030a8\",\n  \"user_id\": \"99bd7a0f-6808-ad50-e6e3-ba3083b526fd\",\n  \"created_at\": \"1966-03-14T18:27:32.626Z\",\n  \"modified_at\": null,\n  \"created_by\": \"4359c8cb-551d-a8d6-fe49-5981910bd9b3\",\n  \"modified_by\": \"306361ea-0a9a-c801-3eac-ff49b49ca0de\"\n}"
+                  "body": "{\n  \"id\": \"05e8c682-3970-3378-ee78-1fbaab0e495d\",\n  \"voucher_code\": \"string\",\n  \"voucher_status\": \"redeemed\",\n  \"coupon_id\": \"86c78989-9657-e354-f2da-6348331b77c6\",\n  \"user_id\": \"d748447d-712e-f3e0-92fd-333f9e81efc0\",\n  \"created_at\": \"1971-12-26T06:46:00.771Z\",\n  \"modified_at\": null,\n  \"created_by\": \"d2238033-3898-f38d-14fd-c97618b83bd6\",\n  \"modified_by\": null\n}"
                 },
                 {
                   "name": "Validation Error",
@@ -702,7 +714,7 @@
                       "variable": [
                         {
                           "key": "voucher_id",
-                          "value": "b2f8a514-ce5e-a3fd-d3b2-22ad915cd613"
+                          "value": "148f8b8d-c6e8-9b02-623e-f7d4747a4fd0"
                         }
                       ]
                     }
@@ -717,7 +729,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        420,\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        3402\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
+                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
                 }
               ]
             },
@@ -737,7 +749,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"voucher_code\": null,\n  \"voucher_status\": \"available\",\n  \"coupon_id\": \"d9d7a983-b80e-497e-5469-2a8765e3b42b\",\n  \"user_id\": \"9cd88e71-56c8-d23e-0d99-4d2b60cdb807\"\n}",
+                  "raw": "{\n  \"voucher_code\": null,\n  \"voucher_status\": \"redeemed\",\n  \"coupon_id\": \"d0c57326-870e-4d41-1966-18c9d1f222d1\",\n  \"user_id\": null\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -757,7 +769,7 @@
                   "variable": [
                     {
                       "key": "voucher_id",
-                      "value": "b2f8a514-ce5e-a3fd-d3b2-22ad915cd613"
+                      "value": "148f8b8d-c6e8-9b02-623e-f7d4747a4fd0"
                     }
                   ]
                 }
@@ -779,7 +791,7 @@
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"voucher_code\": null,\n  \"voucher_status\": \"available\",\n  \"coupon_id\": \"d9d7a983-b80e-497e-5469-2a8765e3b42b\",\n  \"user_id\": \"9cd88e71-56c8-d23e-0d99-4d2b60cdb807\"\n}",
+                      "raw": "{\n  \"voucher_code\": null,\n  \"voucher_status\": \"redeemed\",\n  \"coupon_id\": \"d0c57326-870e-4d41-1966-18c9d1f222d1\",\n  \"user_id\": null\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -799,7 +811,7 @@
                       "variable": [
                         {
                           "key": "voucher_id",
-                          "value": "b2f8a514-ce5e-a3fd-d3b2-22ad915cd613"
+                          "value": "148f8b8d-c6e8-9b02-623e-f7d4747a4fd0"
                         }
                       ]
                     }
@@ -814,7 +826,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n  \"id\": \"2b27e303-9114-df5d-1cf4-eb6718b29449\",\n  \"voucher_code\": \"string\",\n  \"voucher_status\": \"redeemed\",\n  \"coupon_id\": \"2b7e2039-7a99-2153-aa58-ab0a653030a8\",\n  \"user_id\": \"99bd7a0f-6808-ad50-e6e3-ba3083b526fd\",\n  \"created_at\": \"1966-03-14T18:27:32.626Z\",\n  \"modified_at\": null,\n  \"created_by\": \"4359c8cb-551d-a8d6-fe49-5981910bd9b3\",\n  \"modified_by\": \"306361ea-0a9a-c801-3eac-ff49b49ca0de\"\n}"
+                  "body": "{\n  \"id\": \"05e8c682-3970-3378-ee78-1fbaab0e495d\",\n  \"voucher_code\": \"string\",\n  \"voucher_status\": \"redeemed\",\n  \"coupon_id\": \"86c78989-9657-e354-f2da-6348331b77c6\",\n  \"user_id\": \"d748447d-712e-f3e0-92fd-333f9e81efc0\",\n  \"created_at\": \"1971-12-26T06:46:00.771Z\",\n  \"modified_at\": null,\n  \"created_by\": \"d2238033-3898-f38d-14fd-c97618b83bd6\",\n  \"modified_by\": null\n}"
                 },
                 {
                   "name": "Validation Error",
@@ -832,7 +844,7 @@
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"voucher_code\": null,\n  \"voucher_status\": \"available\",\n  \"coupon_id\": \"d9d7a983-b80e-497e-5469-2a8765e3b42b\",\n  \"user_id\": \"9cd88e71-56c8-d23e-0d99-4d2b60cdb807\"\n}",
+                      "raw": "{\n  \"voucher_code\": null,\n  \"voucher_status\": \"redeemed\",\n  \"coupon_id\": \"d0c57326-870e-4d41-1966-18c9d1f222d1\",\n  \"user_id\": null\n}",
                       "options": {
                         "raw": {
                           "headerFamily": "json",
@@ -852,7 +864,7 @@
                       "variable": [
                         {
                           "key": "voucher_id",
-                          "value": "b2f8a514-ce5e-a3fd-d3b2-22ad915cd613"
+                          "value": "148f8b8d-c6e8-9b02-623e-f7d4747a4fd0"
                         }
                       ]
                     }
@@ -867,7 +879,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        420,\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        3402\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
+                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
                 }
               ]
             },
@@ -893,7 +905,7 @@
                   "variable": [
                     {
                       "key": "voucher_id",
-                      "value": "b2f8a514-ce5e-a3fd-d3b2-22ad915cd613"
+                      "value": "148f8b8d-c6e8-9b02-623e-f7d4747a4fd0"
                     }
                   ]
                 }
@@ -916,7 +928,7 @@
                       "variable": [
                         {
                           "key": "voucher_id",
-                          "value": "b2f8a514-ce5e-a3fd-d3b2-22ad915cd613"
+                          "value": "148f8b8d-c6e8-9b02-623e-f7d4747a4fd0"
                         }
                       ]
                     }
@@ -950,7 +962,7 @@
                       "variable": [
                         {
                           "key": "voucher_id",
-                          "value": "b2f8a514-ce5e-a3fd-d3b2-22ad915cd613"
+                          "value": "148f8b8d-c6e8-9b02-623e-f7d4747a4fd0"
                         }
                       ]
                     }
@@ -965,7 +977,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        420,\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        3402\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
+                  "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
                 }
               ]
             }
@@ -987,7 +999,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"coupon_id\": \"cbaa9d68-5031-6b7f-85cc-f608f2e31865\",\n  \"user_id\": \"10dc1d93-3723-8278-56a4-7ca95f7f3a1e\",\n  \"voucher_code\": null,\n  \"voucher_status\": \"available\"\n}",
+              "raw": "{\n  \"coupon_id\": \"4bc488fd-461a-8c6d-2236-f4516e3309d4\",\n  \"user_id\": \"551cd2b8-e57e-7d5e-3db7-533625add7bb\",\n  \"voucher_code\": \"string\",\n  \"voucher_status\": \"redeemed\"\n}",
               "options": {
                 "raw": {
                   "headerFamily": "json",
@@ -1022,7 +1034,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"coupon_id\": \"cbaa9d68-5031-6b7f-85cc-f608f2e31865\",\n  \"user_id\": \"10dc1d93-3723-8278-56a4-7ca95f7f3a1e\",\n  \"voucher_code\": null,\n  \"voucher_status\": \"available\"\n}",
+                  "raw": "{\n  \"coupon_id\": \"4bc488fd-461a-8c6d-2236-f4516e3309d4\",\n  \"user_id\": \"551cd2b8-e57e-7d5e-3db7-533625add7bb\",\n  \"voucher_code\": \"string\",\n  \"voucher_status\": \"redeemed\"\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -1050,7 +1062,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n  \"id\": \"2b27e303-9114-df5d-1cf4-eb6718b29449\",\n  \"voucher_code\": \"string\",\n  \"voucher_status\": \"redeemed\",\n  \"coupon_id\": \"2b7e2039-7a99-2153-aa58-ab0a653030a8\",\n  \"user_id\": \"99bd7a0f-6808-ad50-e6e3-ba3083b526fd\",\n  \"created_at\": \"1966-03-14T18:27:32.626Z\",\n  \"modified_at\": null,\n  \"created_by\": \"4359c8cb-551d-a8d6-fe49-5981910bd9b3\",\n  \"modified_by\": \"306361ea-0a9a-c801-3eac-ff49b49ca0de\"\n}"
+              "body": "{\n  \"id\": \"05e8c682-3970-3378-ee78-1fbaab0e495d\",\n  \"voucher_code\": \"string\",\n  \"voucher_status\": \"redeemed\",\n  \"coupon_id\": \"86c78989-9657-e354-f2da-6348331b77c6\",\n  \"user_id\": \"d748447d-712e-f3e0-92fd-333f9e81efc0\",\n  \"created_at\": \"1971-12-26T06:46:00.771Z\",\n  \"modified_at\": null,\n  \"created_by\": \"d2238033-3898-f38d-14fd-c97618b83bd6\",\n  \"modified_by\": null\n}"
             },
             {
               "name": "Validation Error",
@@ -1068,7 +1080,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"coupon_id\": \"cbaa9d68-5031-6b7f-85cc-f608f2e31865\",\n  \"user_id\": \"10dc1d93-3723-8278-56a4-7ca95f7f3a1e\",\n  \"voucher_code\": null,\n  \"voucher_status\": \"available\"\n}",
+                  "raw": "{\n  \"coupon_id\": \"4bc488fd-461a-8c6d-2236-f4516e3309d4\",\n  \"user_id\": \"551cd2b8-e57e-7d5e-3db7-533625add7bb\",\n  \"voucher_code\": \"string\",\n  \"voucher_status\": \"redeemed\"\n}",
                   "options": {
                     "raw": {
                       "headerFamily": "json",
@@ -1096,7 +1108,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        420,\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        3402\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
             }
           ]
         },
@@ -1213,7 +1225,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        420,\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        3402\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": \"\",\n      \"ctx\": {}\n    }\n  ]\n}"
             }
           ]
         }
