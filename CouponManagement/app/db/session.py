@@ -8,6 +8,10 @@ connect_args: Dict[str, Any] = {"sslmode": "require"}
 if settings.database_url.startswith("sqlite"):
     connect_args["check_same_thread"] = False
 
-engine = create_engine(settings.database_url, connect_args=connect_args, pool_pre_ping=True, pool_recycle=300)
+engine = create_engine(settings.database_url, 
+                       connect_args=connect_args, 
+                       pool_pre_ping=True, 
+                       pool_recycle=300
+                       )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
